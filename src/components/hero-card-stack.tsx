@@ -58,7 +58,7 @@ export function HeroCardStack() {
           const scale = 1 - i * 0.05;
           const zIndex = cards.length - i;
           const blur = i === 0 ? 0 : i * 0.4;
-          const thickness = 14;
+          const thickness = 20;
 
           return (
             <motion.div
@@ -88,6 +88,35 @@ export function HeroCardStack() {
                   delay: i * 0.2,
                 }}
               >
+                {/* Back face */}
+                <div
+                  className="absolute inset-0 rounded-2xl bg-gradient-to-br from-black/50 to-black/20"
+                  style={{ transform: `translateZ(-${thickness}px)` }}
+                />
+
+                {/* Left edge thickness */}
+                <div
+                  className="absolute left-0 top-0 rounded-l-sm bg-gradient-to-r from-black/70 to-black/30"
+                  style={{
+                    width: `${thickness}px`,
+                    height: "100%",
+                    transform: "translateX(-100%) rotateY(-90deg)",
+                    transformOrigin: "right center",
+                    backfaceVisibility: "hidden",
+                  }}
+                />
+                {/* Bottom edge thickness */}
+                <div
+                  className="absolute bottom-0 left-0 rounded-b-sm bg-gradient-to-t from-black/70 to-black/30"
+                  style={{
+                    width: "100%",
+                    height: `${thickness}px`,
+                    transform: "translateY(100%) rotateX(90deg)",
+                    transformOrigin: "top center",
+                    backfaceVisibility: "hidden",
+                  }}
+                />
+
                 {/* Front face */}
                 <div
                   className="absolute inset-0 overflow-hidden rounded-2xl border border-white/40 bg-card shadow-[var(--shadow-card)]"
@@ -122,29 +151,6 @@ export function HeroCardStack() {
                     </div>
                   )}
                 </div>
-
-                {/* Left edge thickness */}
-                <div
-                  className="absolute left-0 top-0 rounded-l-sm bg-gradient-to-r from-black/60 to-black/20"
-                  style={{
-                    width: `${thickness}px`,
-                    height: "100%",
-                    transform: "translateX(-100%) rotateY(-90deg)",
-                    transformOrigin: "right center",
-                    backfaceVisibility: "hidden",
-                  }}
-                />
-                {/* Bottom edge thickness */}
-                <div
-                  className="absolute bottom-0 left-0 rounded-b-sm bg-gradient-to-t from-black/60 to-black/20"
-                  style={{
-                    width: "100%",
-                    height: `${thickness}px`,
-                    transform: "translateY(100%) rotateX(90deg)",
-                    transformOrigin: "top center",
-                    backfaceVisibility: "hidden",
-                  }}
-                />
               </motion.div>
             </motion.div>
           );
