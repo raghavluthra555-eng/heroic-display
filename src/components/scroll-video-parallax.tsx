@@ -30,14 +30,8 @@ export function ScrollVideoParallax() {
   });
 
   // Foreground parallax layers
-  const bgScale = useTransform(smoothProgress, [0, 0.5, 1], [1.15, 1.05, 1.2]);
-  const bgY = useTransform(smoothProgress, [0, 1], ["-4%", "4%"]);
-  const vignetteOpacity = useTransform(
-    smoothProgress,
-    [0, 0.15, 0.85, 1],
-    [1, 0.35, 0.35, 1],
-  );
-  const grainOpacity = useTransform(smoothProgress, [0, 0.5, 1], [0.25, 0.15, 0.25]);
+  const bgScale = useTransform(smoothProgress, [0, 0.5, 1], [1.1, 1.03, 1.12]);
+  const bgY = useTransform(smoothProgress, [0, 1], ["-3%", "3%"]);
 
   // Load & prepare video
   useEffect(() => {
@@ -134,14 +128,18 @@ export function ScrollVideoParallax() {
       ref={sectionRef}
       aria-label="Cinematic scene"
       className="relative w-full"
-      style={{ height: "300vh" }}
+      style={{ height: "600vh" }}
     >
       {/* Pinned viewport */}
       <div className="sticky top-0 h-screen w-full overflow-hidden bg-black">
         {/* Canvas video layer with parallax */}
         <motion.div
           className="absolute inset-0 will-change-transform"
-          style={{ scale: bgScale, y: bgY }}
+          style={{
+            scale: bgScale,
+            y: bgY,
+            filter: "brightness(1.25) contrast(1.05) saturate(1.05)",
+          }}
         >
           <canvas ref={canvasRef} className="h-full w-full" />
         </motion.div>
@@ -156,30 +154,6 @@ export function ScrollVideoParallax() {
           crossOrigin="anonymous"
           className="hidden"
         />
-
-        {/* Cinematic vignette */}
-        <motion.div
-          className="pointer-events-none absolute inset-0"
-          style={{
-            opacity: vignetteOpacity,
-            background:
-              "radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.55) 80%, rgba(0,0,0,0.9) 100%)",
-          }}
-        />
-
-        {/* Subtle grain */}
-        <motion.div
-          className="pointer-events-none absolute inset-0 mix-blend-overlay"
-          style={{
-            opacity: grainOpacity,
-            backgroundImage:
-              "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.55 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>\")",
-          }}
-        />
-
-        {/* Top & bottom fade for section blending */}
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-black/80 to-transparent" />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-black/90 to-transparent" />
       </div>
     </section>
   );
