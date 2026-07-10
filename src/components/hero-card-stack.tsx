@@ -6,6 +6,7 @@ import sunglasses from "@/assets/card-sunglasses.jpg";
 import bag from "@/assets/card-bag.jpg";
 import mountain from "@/assets/card-mountain.jpg";
 import perfume from "@/assets/card-perfume.jpg";
+import podium from "@/assets/podium-dark.png";
 
 type Card = {
   id: number;
