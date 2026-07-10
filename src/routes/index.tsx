@@ -11,7 +11,7 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <div
-      className="relative min-h-screen overflow-hidden"
+      className="relative overflow-hidden"
       style={{ background: "var(--gradient-hero)" }}
     >
       {/* Ambient glows */}
@@ -43,7 +43,7 @@ function Index() {
       </nav>
 
       {/* Hero */}
-      <section className="relative z-10 mx-auto grid max-w-7xl gap-12 px-6 pb-20 pt-10 lg:grid-cols-2 lg:gap-6 lg:px-10 lg:pt-16">
+      <section className="relative z-10 mx-auto grid max-w-7xl gap-12 px-6 pb-0 pt-6 lg:grid-cols-2 lg:gap-6 lg:px-10 lg:pt-10">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
