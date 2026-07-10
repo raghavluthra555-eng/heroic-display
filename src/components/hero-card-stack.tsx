@@ -125,7 +125,7 @@ export function HeroCardStack() {
 
                 {/* Left edge thickness */}
                 <div
-                  className="absolute left-0 top-0 rounded-l-sm bg-gradient-to-r from-black/50 to-black/20"
+                  className="absolute left-0 top-0 rounded-l-sm bg-gradient-to-r from-black/60 to-black/20"
                   style={{
                     width: `${thickness}px`,
                     height: "100%",
@@ -136,7 +136,7 @@ export function HeroCardStack() {
                 />
                 {/* Bottom edge thickness */}
                 <div
-                  className="absolute bottom-0 left-0 rounded-b-sm bg-gradient-to-t from-black/50 to-black/20"
+                  className="absolute bottom-0 left-0 rounded-b-sm bg-gradient-to-t from-black/60 to-black/20"
                   style={{
                     width: "100%",
                     height: `${thickness}px`,
