@@ -54,12 +54,12 @@ export function HeroCardStack() {
         style={{ transformStyle: "preserve-3d" }}
       >
         {cards.map((card, i) => {
-          const offsetX = i * 16;
-          const offsetY = i * -3;
-          const scale = 1 - i * 0.02;
+          const offsetX = i * 32;
+          const offsetY = i * -10;
+          const scale = 1 - i * 0.03;
           const zIndex = cards.length - i;
           const blur = i === 0 ? 0 : i * 0.4;
-          const thickness = 44;
+          const thickness = 48;
 
           return (
             <motion.div
@@ -71,7 +71,7 @@ export function HeroCardStack() {
                 x: offsetX,
                 y: offsetY,
                 scale,
-                rotateY: -18,
+                rotateY: -18 - i * 5,
                 rotateX: 4,
                 filter: `blur(${blur}px) brightness(${1 - i * 0.08})`,
                 opacity: i > 4 ? 0 : 1,
@@ -91,13 +91,13 @@ export function HeroCardStack() {
               >
                 {/* Back face */}
                 <div
-                  className="absolute inset-0 rounded-2xl bg-gradient-to-br from-black/50 to-black/20"
+                  className="absolute inset-0 rounded-2xl bg-gradient-to-br from-slate-400/50 to-slate-500/30"
                   style={{ transform: `translateZ(-${thickness}px)` }}
                 />
 
                 {/* Left edge thickness */}
                 <div
-                  className="absolute left-0 top-0 rounded-l-sm bg-gradient-to-r from-black/80 to-black/40"
+                  className="absolute left-0 top-0 rounded-l-xl bg-gradient-to-r from-white/95 to-white/55"
                   style={{
                     width: `${thickness}px`,
                     height: "100%",
@@ -108,7 +108,7 @@ export function HeroCardStack() {
                 />
                 {/* Bottom edge thickness */}
                 <div
-                  className="absolute bottom-0 left-0 rounded-b-sm bg-gradient-to-t from-black/80 to-black/40"
+                  className="absolute bottom-0 left-0 rounded-b-xl bg-gradient-to-t from-white/95 to-white/55"
                   style={{
                     width: "100%",
                     height: `${thickness}px`,
@@ -120,34 +120,28 @@ export function HeroCardStack() {
 
                 {/* Front face */}
                 <div
-                  className="absolute inset-0 overflow-hidden rounded-2xl border border-white/40 bg-card shadow-[var(--shadow-card)]"
+                  className="absolute inset-0 overflow-hidden rounded-2xl border-[10px] border-white bg-white shadow-[0_30px_70px_-20px_oklch(0.35_0.15_285_/_0.35)]"
                   style={{ transform: "translateZ(0)" }}
                 >
-                  {/* Browser chrome */}
-                  <div className="flex items-center gap-1.5 bg-background/90 px-3 py-2">
-                    <span className="h-2 w-2 rounded-full bg-primary/30" />
-                    <span className="h-2 w-2 rounded-full bg-primary/30" />
-                    <span className="h-2 w-2 rounded-full bg-primary/30" />
-                  </div>
                   <img
                     src={card.src}
                     alt={card.label}
-                    className="h-[calc(100%-32px)] w-full object-cover"
+                    className="h-full w-full rounded-lg object-cover"
                     draggable={false}
                   />
                   {/* Overlay content */}
-                  <div className="absolute inset-x-0 top-10 flex flex-col gap-2 p-5">
-                    <span className="text-xs font-semibold tracking-[0.2em] text-primary-foreground/90 drop-shadow">
+                  <div className="absolute inset-0 flex flex-col justify-between p-5">
+                    <span className="text-xs font-semibold tracking-[0.2em] text-white drop-shadow-md">
                       {card.label}
                     </span>
                     {card.cta && (
-                      <button className="mt-1 w-fit rounded-full bg-foreground px-4 py-1.5 text-[10px] font-bold tracking-wider text-background shadow-lg">
+                      <button className="w-fit rounded-full bg-black/80 px-4 py-1.5 text-[10px] font-bold tracking-wider text-white shadow-lg">
                         {card.cta}
                       </button>
                     )}
                   </div>
                   {card.badge && (
-                    <div className="absolute bottom-3 right-3 rounded-full bg-foreground/90 px-3 py-1 text-[10px] font-bold tracking-wider text-background">
+                    <div className="absolute bottom-4 right-4 rounded-full bg-white/90 px-3 py-1 text-[10px] font-bold tracking-wider text-black">
                       {card.badge}
                     </div>
                   )}
