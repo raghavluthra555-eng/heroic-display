@@ -108,7 +108,7 @@ export function HeroCardStack() {
                 />
                 {/* Bottom edge thickness */}
                 <div
-                  className="absolute bottom-0 left-0 rounded-b-xl bg-gradient-to-t from-white/95 to-white/55"
+                  className="absolute bottom-0 left-0 rounded-b-xl bg-gradient-to-t from-primary/30 to-white/60"
                   style={{
                     width: "100%",
                     height: `${thickness}px`,
@@ -120,7 +120,7 @@ export function HeroCardStack() {
 
                 {/* Front face */}
                 <div
-                  className="absolute inset-0 overflow-hidden rounded-2xl border-[10px] border-white bg-white shadow-[0_30px_70px_-20px_oklch(0.35_0.15_285_/_0.35)]"
+                  className="absolute inset-0 overflow-hidden rounded-2xl border-[10px] border-white bg-white shadow-[0_30px_70px_-20px_oklch(0.62_0.22_290_/_0.35)]"
                   style={{ transform: "translateZ(0)" }}
                 >
                   <img
@@ -131,7 +131,7 @@ export function HeroCardStack() {
                   />
                   {/* Overlay content */}
                   <div className="absolute inset-0 flex flex-col justify-between p-5">
-                    <span className="text-xs font-semibold tracking-[0.2em] text-white drop-shadow-md">
+                    <span className="text-sm font-semibold tracking-[0.2em] text-white drop-shadow-md">
                       {card.label}
                     </span>
                     {card.cta && (
