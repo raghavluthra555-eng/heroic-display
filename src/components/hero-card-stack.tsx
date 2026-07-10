@@ -49,25 +49,22 @@ export function HeroCardStack() {
       />
 
       <div
-        className="relative h-[280px] w-[440px] max-w-full"
+        className="relative h-[240px] w-[340px] max-w-full"
         style={{ transformStyle: "preserve-3d" }}
       >
         {cards.map((card, i) => {
-          const offsetX = i * 38;
+          const offsetX = i * 28;
           const offsetY = i * -6;
           const scale = 1 - i * 0.05;
           const zIndex = cards.length - i;
           const blur = i === 0 ? 0 : i * 0.4;
+          const thickness = 14;
 
           return (
             <motion.div
               key={card.id}
-              className="absolute inset-0 overflow-hidden rounded-2xl border border-white/40 bg-card"
-              style={{
-                transformStyle: "preserve-3d",
-                boxShadow: "var(--shadow-card)",
-                zIndex,
-              }}
+              className="absolute inset-0"
+              style={{ transformStyle: "preserve-3d", zIndex }}
               initial={false}
               animate={{
                 x: offsetX,
@@ -82,6 +79,7 @@ export function HeroCardStack() {
             >
               <motion.div
                 className="relative h-full w-full"
+                style={{ transformStyle: "preserve-3d" }}
                 animate={{ y: [0, -8, 0] }}
                 transition={{
                   duration: 5 + i * 0.3,
@@ -90,34 +88,63 @@ export function HeroCardStack() {
                   delay: i * 0.2,
                 }}
               >
-                {/* Browser chrome */}
-                <div className="flex items-center gap-1.5 bg-background/90 px-3 py-2">
-                  <span className="h-2 w-2 rounded-full bg-primary/30" />
-                  <span className="h-2 w-2 rounded-full bg-primary/30" />
-                  <span className="h-2 w-2 rounded-full bg-primary/30" />
-                </div>
-                <img
-                  src={card.src}
-                  alt={card.label}
-                  className="h-[calc(100%-32px)] w-full object-cover"
-                  draggable={false}
-                />
-                {/* Overlay content */}
-                <div className="absolute inset-x-0 top-10 flex flex-col gap-2 p-5">
-                  <span className="text-xs font-semibold tracking-[0.2em] text-primary-foreground/90 drop-shadow">
-                    {card.label}
-                  </span>
-                  {card.cta && (
-                    <button className="mt-1 w-fit rounded-full bg-foreground px-4 py-1.5 text-[10px] font-bold tracking-wider text-background shadow-lg">
-                      {card.cta}
-                    </button>
+                {/* Front face */}
+                <div
+                  className="absolute inset-0 overflow-hidden rounded-2xl border border-white/40 bg-card shadow-[var(--shadow-card)]"
+                  style={{ transform: "translateZ(0)" }}
+                >
+                  {/* Browser chrome */}
+                  <div className="flex items-center gap-1.5 bg-background/90 px-3 py-2">
+                    <span className="h-2 w-2 rounded-full bg-primary/30" />
+                    <span className="h-2 w-2 rounded-full bg-primary/30" />
+                    <span className="h-2 w-2 rounded-full bg-primary/30" />
+                  </div>
+                  <img
+                    src={card.src}
+                    alt={card.label}
+                    className="h-[calc(100%-32px)] w-full object-cover"
+                    draggable={false}
+                  />
+                  {/* Overlay content */}
+                  <div className="absolute inset-x-0 top-10 flex flex-col gap-2 p-5">
+                    <span className="text-xs font-semibold tracking-[0.2em] text-primary-foreground/90 drop-shadow">
+                      {card.label}
+                    </span>
+                    {card.cta && (
+                      <button className="mt-1 w-fit rounded-full bg-foreground px-4 py-1.5 text-[10px] font-bold tracking-wider text-background shadow-lg">
+                        {card.cta}
+                      </button>
+                    )}
+                  </div>
+                  {card.badge && (
+                    <div className="absolute bottom-3 right-3 rounded-full bg-foreground/90 px-3 py-1 text-[10px] font-bold tracking-wider text-background">
+                      {card.badge}
+                    </div>
                   )}
                 </div>
-                {card.badge && (
-                  <div className="absolute bottom-3 right-3 rounded-full bg-foreground/90 px-3 py-1 text-[10px] font-bold tracking-wider text-background">
-                    {card.badge}
-                  </div>
-                )}
+
+                {/* Left edge thickness */}
+                <div
+                  className="absolute left-0 top-0 rounded-l-sm bg-gradient-to-r from-black/60 to-black/20"
+                  style={{
+                    width: `${thickness}px`,
+                    height: "100%",
+                    transform: "translateX(-100%) rotateY(-90deg)",
+                    transformOrigin: "right center",
+                    backfaceVisibility: "hidden",
+                  }}
+                />
+                {/* Bottom edge thickness */}
+                <div
+                  className="absolute bottom-0 left-0 rounded-b-sm bg-gradient-to-t from-black/60 to-black/20"
+                  style={{
+                    width: "100%",
+                    height: `${thickness}px`,
+                    transform: "translateY(100%) rotateX(90deg)",
+                    transformOrigin: "top center",
+                    backfaceVisibility: "hidden",
+                  }}
+                />
               </motion.div>
             </motion.div>
           );
