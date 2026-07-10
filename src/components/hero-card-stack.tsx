@@ -49,12 +49,12 @@ export function HeroCardStack() {
       />
 
       <div
-        className="relative h-[380px] w-[300px]"
+        className="relative h-[280px] w-[440px] max-w-full"
         style={{ transformStyle: "preserve-3d" }}
       >
         {cards.map((card, i) => {
-          const offsetX = i * 34;
-          const offsetY = i * -4;
+          const offsetX = i * 38;
+          const offsetY = i * -6;
           const scale = 1 - i * 0.05;
           const zIndex = cards.length - i;
           const blur = i === 0 ? 0 : i * 0.4;
