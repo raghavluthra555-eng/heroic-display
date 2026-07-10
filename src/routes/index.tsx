@@ -97,20 +97,20 @@ function Index() {
       {/* Designer transition into cinematic section */}
       <div className="relative z-10 -mt-px">
         <svg
-          viewBox="0 0 1440 140"
+          viewBox="0 0 1440 80"
           preserveAspectRatio="none"
-          className="block h-[80px] w-full sm:h-[120px]"
+          className="block h-[40px] w-full sm:h-[60px]"
           aria-hidden="true"
         >
           <defs>
-            <linearGradient id="fadeToBlack" x1="0" x2="0" y1="0" y2="1">
+            <linearGradient id="fadeToVideo" x1="0" x2="0" y1="0" y2="1">
               <stop offset="0%" stopColor="oklch(0.9 0.06 295)" stopOpacity="0" />
-              <stop offset="100%" stopColor="#000" stopOpacity="1" />
+              <stop offset="100%" stopColor="oklch(0.92 0.04 300)" stopOpacity="1" />
             </linearGradient>
           </defs>
           <path
-            d="M0,0 C240,120 480,120 720,60 C960,0 1200,0 1440,80 L1440,140 L0,140 Z"
-            fill="url(#fadeToBlack)"
+            d="M0,0 C240,35 480,35 720,20 C960,5 1200,5 1440,35 L1440,80 L0,80 Z"
+            fill="url(#fadeToVideo)"
           />
         </svg>
       </div>
