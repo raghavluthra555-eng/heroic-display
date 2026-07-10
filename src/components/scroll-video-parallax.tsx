@@ -131,7 +131,7 @@ export function ScrollVideoParallax() {
       style={{ height: "600vh" }}
     >
       {/* Pinned viewport */}
-      <div className="sticky top-0 h-screen w-full overflow-hidden bg-black">
+      <div className="sticky top-0 h-screen w-full overflow-hidden" style={{ backgroundColor: "oklch(0.92 0.04 300)" }}>
         {/* Canvas video layer with parallax */}
         <motion.div
           className="absolute inset-0 will-change-transform"
