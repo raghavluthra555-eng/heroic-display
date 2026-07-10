@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 
-import videoAsset from "@/assets/parallax-scene.mp4.asset.json";
+const VIDEO_SRC = "/parallax-scene.mp4";
 
 /**
  * Cinematic scroll-driven video parallax.
@@ -147,7 +147,7 @@ export function ScrollVideoParallax() {
         {/* Hidden source video */}
         <video
           ref={videoRef}
-          src={videoAsset.url}
+          src={VIDEO_SRC}
           muted
           playsInline
           preload="auto"

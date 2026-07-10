@@ -1,7 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, ChevronDown } from "lucide-react";
 
-import sofiaLogo from "@/assets/sofialogo.svg.asset.json";
+const SOFIA_LOGO = "/sofialogo.svg";
 
 const SOFIA = "https://www.sofiapulse.com";
 const CONTACT = `${SOFIA}/#Contact`;
@@ -49,7 +49,7 @@ export function LiquidNav() {
         />
 
         <a href={SOFIA} target="_blank" rel="noopener" className="relative flex items-center gap-2 pl-3 pr-2">
-          <img src={sofiaLogo.url} alt="sofiapulse" className="h-6 w-auto" />
+          <img src={SOFIA_LOGO} alt="sofiapulse" className="h-6 w-auto" />
         </a>
 
         <nav className="relative hidden items-center gap-1 md:flex">
