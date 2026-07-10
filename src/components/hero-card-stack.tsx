@@ -49,7 +49,7 @@ export function HeroCardStack() {
       />
 
       <div
-        className="relative h-[240px] w-[360px] max-w-full"
+        className="relative h-[240px] w-[340px] max-w-full"
         style={{ transformStyle: "preserve-3d" }}
       >
         {cards.map((card, i) => {
