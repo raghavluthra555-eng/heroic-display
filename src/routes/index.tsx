@@ -11,7 +11,7 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <div
-      className="relative overflow-hidden"
+      className="relative"
       style={{ background: "var(--gradient-hero)" }}
     >
       {/* Ambient glows */}
