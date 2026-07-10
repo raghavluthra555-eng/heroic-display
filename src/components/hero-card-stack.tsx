@@ -41,7 +41,7 @@ export function HeroCardStack() {
     >
       {/* 3D podium */}
       <img
-        src={podium}
+        src={podiumAsset.url}
         alt="3D podium"
         className="pointer-events-none absolute bottom-[-80px] left-1/2 z-0 h-[240px] w-[560px] max-w-[150%] -translate-x-1/2 object-cover object-top opacity-90"
         width={1024}
