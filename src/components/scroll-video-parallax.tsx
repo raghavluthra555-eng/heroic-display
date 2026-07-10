@@ -128,7 +128,7 @@ export function ScrollVideoParallax() {
       ref={sectionRef}
       aria-label="Cinematic scene"
       className="relative w-full"
-      style={{ height: "600vh" }}
+      style={{ height: "480vh" }}
     >
       {/* Pinned viewport */}
       <div className="sticky top-0 h-screen w-full overflow-hidden" style={{ backgroundColor: "oklch(0.785 0.035 302.5)" }}>
