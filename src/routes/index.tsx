@@ -105,7 +105,7 @@ function Index() {
           <defs>
             <linearGradient id="fadeToVideo" x1="0" x2="0" y1="0" y2="1">
               <stop offset="0%" stopColor="oklch(0.9 0.06 295)" stopOpacity="0" />
-              <stop offset="100%" stopColor="oklch(0.92 0.04 300)" stopOpacity="1" />
+              <stop offset="100%" stopColor="oklch(0.785 0.035 302.5)" stopOpacity="1" />
             </linearGradient>
           </defs>
           <path
