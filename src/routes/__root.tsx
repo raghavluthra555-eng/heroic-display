@@ -77,10 +77,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "Generate dynamic ads in minutes. Adapt by audience, moment, channel, and performance with sofiapulse." },
       { name: "author", content: "sofiapulse" },
       { property: "og:title", content: "sofiapulse — AI-Powered Creative Platform" },
-      { property: "og:description", content: "Generate dynamic ads in minutes. Adapt by audience, moment, channel, and performance." },
+      { property: "og:description", content: "Generate dynamic ads in minutes. Adapt by audience, moment, channel, and performance with sofiapulse." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@sofiapulse" },
+      { name: "twitter:title", content: "sofiapulse — AI-Powered Creative Platform" },
+      { name: "twitter:description", content: "Generate dynamic ads in minutes. Adapt by audience, moment, channel, and performance with sofiapulse." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/75f59e3c-1c39-45ac-8464-07f2124ee280/id-preview-4baa9c0c--83ecf8a8-f19c-458d-8365-585e1c031d41.lovable.app-1783698888683.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/75f59e3c-1c39-45ac-8464-07f2124ee280/id-preview-4baa9c0c--83ecf8a8-f19c-458d-8365-585e1c031d41.lovable.app-1783698888683.png" },
     ],
     links: [
       {
