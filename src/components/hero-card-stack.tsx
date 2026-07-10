@@ -43,20 +43,20 @@ export function HeroCardStack() {
       <img
         src={podiumAsset.url}
         alt="3D podium"
-        className="pointer-events-none absolute bottom-[-80px] left-1/2 z-0 h-[240px] w-[560px] max-w-[150%] -translate-x-1/2 object-cover object-top opacity-90"
+        className="pointer-events-none absolute bottom-[20px] left-1/2 z-0 h-[200px] w-[520px] max-w-[130%] -translate-x-1/2 object-cover object-top opacity-95"
         width={1024}
         height={1024}
         loading="lazy"
       />
 
       <div
-        className="relative h-[240px] w-[340px] max-w-full"
+        className="relative -translate-y-16 h-[240px] w-[340px] max-w-full"
         style={{ transformStyle: "preserve-3d" }}
       >
         {cards.map((card, i) => {
-          const offsetX = i * 28;
-          const offsetY = i * -6;
-          const scale = 1 - i * 0.05;
+          const offsetX = i * 44;
+          const offsetY = i * -10;
+          const scale = 1 - i * 0.04;
           const zIndex = cards.length - i;
           const blur = i === 0 ? 0 : i * 0.4;
           const thickness = 20;

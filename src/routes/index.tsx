@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import { ArrowRight, ChevronDown, Play, Sparkles } from "lucide-react";
+import { ArrowRight, ChevronDown, Play, Sparkles, Activity } from "lucide-react";
 
 import { HeroCardStack } from "@/components/hero-card-stack";
 
@@ -21,16 +21,16 @@ function Index() {
       {/* Nav */}
       <nav className="relative z-10 mx-auto flex max-w-7xl items-center justify-between px-6 py-6 lg:px-10">
         <a href="/" className="flex items-center gap-2">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary shadow-[var(--shadow-glow)]">
-            <Sparkles className="h-4 w-4 text-primary-foreground" />
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/15">
+            <Activity className="h-5 w-5 text-primary" strokeWidth={2.5} />
           </div>
-          <span className="text-xl font-bold tracking-tight text-foreground">
-            sofia<span className="font-light text-primary">pulse</span>
+          <span className="text-2xl font-extrabold tracking-tight text-foreground">
+            sofia<span className="font-normal text-primary">pulse</span>
           </span>
         </a>
         <div className="hidden items-center gap-10 text-sm font-medium text-foreground/80 md:flex">
           <a href="#" className="story-link">Book a demo</a>
-          <a href="#" className="story-link">Pages</a>
+          <a href="#" className="story-link">Pagers</a>
           <a href="#" className="story-link">Request a mockup</a>
           <button className="flex items-center gap-1 story-link">
             EN <ChevronDown className="h-3 w-3" />
@@ -54,7 +54,7 @@ function Index() {
             <Sparkles className="h-4 w-4" />
             AI-Powered Creative Platform
           </div>
-          <h1 className="text-5xl font-bold leading-[1.05] tracking-tight text-foreground sm:text-6xl lg:text-7xl">
+          <h1 className="font-extrabold leading-[1.02] tracking-[-0.03em] text-foreground text-5xl sm:text-6xl lg:text-[5.5rem]">
             Better Creative
             <br />
             <span
