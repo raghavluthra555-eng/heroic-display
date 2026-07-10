@@ -54,9 +54,9 @@ export function HeroCardStack() {
         style={{ transformStyle: "preserve-3d" }}
       >
         {cards.map((card, i) => {
-          const offsetX = i * 32;
-          const offsetY = i * -10;
-          const scale = 1 - i * 0.03;
+          const offsetX = i * 40;
+          const offsetY = i * -12;
+          const scale = 1 - i * 0.015;
           const zIndex = cards.length - i;
           const blur = i === 0 ? 0 : i * 0.4;
           const thickness = 48;
@@ -73,7 +73,7 @@ export function HeroCardStack() {
                 scale,
                 rotateY: -18 - i * 5,
                 rotateX: 4,
-                filter: `blur(${blur}px) brightness(${1 - i * 0.08})`,
+                filter: `blur(${blur}px) brightness(${1 - i * 0.04})`,
                 opacity: i > 4 ? 0 : 1,
               }}
               transition={{ type: "spring", stiffness: 140, damping: 22 }}
