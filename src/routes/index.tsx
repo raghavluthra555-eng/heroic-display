@@ -1,24 +1,96 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { motion } from "framer-motion";
+import { ArrowRight, ChevronDown, Play, Sparkles } from "lucide-react";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+import { HeroCardStack } from "@/components/hero-card-stack";
+
 export const Route = createFileRoute("/")({
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
     <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
+      className="relative min-h-screen overflow-hidden"
+      style={{ background: "var(--gradient-hero)" }}
     >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+      {/* Ambient glows */}
+      <div className="pointer-events-none absolute -top-40 -left-40 h-[500px] w-[500px] rounded-full bg-primary/25 blur-3xl" />
+      <div className="pointer-events-none absolute -bottom-40 right-0 h-[600px] w-[600px] rounded-full bg-accent/40 blur-3xl" />
+
+      {/* Nav */}
+      <nav className="relative z-10 mx-auto flex max-w-7xl items-center justify-between px-6 py-6 lg:px-10">
+        <a href="/" className="flex items-center gap-2">
+          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary shadow-[var(--shadow-glow)]">
+            <Sparkles className="h-4 w-4 text-primary-foreground" />
+          </div>
+          <span className="text-xl font-bold tracking-tight text-foreground">
+            sofia<span className="font-light text-primary">pulse</span>
+          </span>
+        </a>
+        <div className="hidden items-center gap-10 text-sm font-medium text-foreground/80 md:flex">
+          <a href="#" className="story-link">Book a demo</a>
+          <a href="#" className="story-link">Pages</a>
+          <a href="#" className="story-link">Request a mockup</a>
+          <button className="flex items-center gap-1 story-link">
+            EN <ChevronDown className="h-3 w-3" />
+          </button>
+        </div>
+        <button className="group inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition-transform hover:scale-105">
+          Get Started
+          <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+        </button>
+      </nav>
+
+      {/* Hero */}
+      <section className="relative z-10 mx-auto grid max-w-7xl gap-12 px-6 pb-20 pt-10 lg:grid-cols-2 lg:gap-6 lg:px-10 lg:pt-16">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="flex flex-col justify-center"
+        >
+          <div className="mb-6 inline-flex w-fit items-center gap-2 text-sm font-semibold uppercase tracking-[0.2em] text-primary">
+            <Sparkles className="h-4 w-4" />
+            AI-Powered Creative Platform
+          </div>
+          <h1 className="text-5xl font-bold leading-[1.05] tracking-tight text-foreground sm:text-6xl lg:text-7xl">
+            Better Creative
+            <br />
+            <span
+              className="bg-clip-text text-transparent"
+              style={{ backgroundImage: "var(--gradient-primary)" }}
+            >
+              that gets Smarter.
+            </span>
+          </h1>
+          <p className="mt-6 max-w-md text-base leading-relaxed text-muted-foreground sm:text-lg">
+            Generate dynamic ads in minutes. Adapt by audience, moment, channel,
+            and performance.
+          </p>
+          <div className="mt-10 flex flex-wrap items-center gap-6">
+            <button className="group inline-flex items-center gap-2 rounded-full bg-primary px-7 py-4 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition-transform hover:scale-105">
+              Create smarter ads
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+            </button>
+            <button className="group inline-flex items-center gap-3 text-sm font-semibold text-foreground">
+              <span className="flex h-10 w-10 items-center justify-center rounded-full border border-primary/40 transition-colors group-hover:bg-primary/10">
+                <Play className="h-3.5 w-3.5 fill-primary text-primary" />
+              </span>
+              See how it works
+            </button>
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.9, ease: "easeOut", delay: 0.15 }}
+          className="relative flex items-center justify-center"
+        >
+          <HeroCardStack />
+        </motion.div>
+      </section>
     </div>
   );
 }
