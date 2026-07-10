@@ -39,14 +39,14 @@ export function HeroCardStack() {
       className="relative mx-auto flex h-[520px] w-full max-w-[640px] items-center justify-center"
       style={{ perspective: "1500px" }}
     >
-      {/* Glow pedestal */}
-      <div className="pointer-events-none absolute bottom-8 left-1/2 h-16 w-72 -translate-x-1/2 rounded-[50%] bg-primary/40 blur-3xl" />
-      <div
-        className="pointer-events-none absolute bottom-4 left-1/2 h-10 w-56 -translate-x-1/2 rounded-full"
-        style={{
-          background:
-            "radial-gradient(ellipse at center, oklch(0.35 0.15 285 / 0.9), transparent 70%)",
-        }}
+      {/* 3D podium */}
+      <img
+        src={podium}
+        alt="3D podium"
+        className="pointer-events-none absolute bottom-[-80px] left-1/2 z-0 h-[240px] w-[560px] max-w-[150%] -translate-x-1/2 object-cover object-top opacity-90"
+        width={1024}
+        height={1024}
+        loading="lazy"
       />
 
       <div
