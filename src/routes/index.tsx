@@ -54,7 +54,7 @@ function Index() {
             <Sparkles className="h-4 w-4" />
             AI-Powered Creative Platform
           </div>
-          <h1 className="font-extrabold leading-[1.05] tracking-[-0.035em] text-foreground text-4xl sm:text-5xl lg:text-[4.25rem] whitespace-nowrap-none">
+          <h1 className="font-extrabold leading-[1.02] tracking-[-0.035em] text-foreground text-4xl sm:text-5xl lg:text-[5rem]">
             <span className="whitespace-nowrap">Better Creative</span>
             <br />
             <span

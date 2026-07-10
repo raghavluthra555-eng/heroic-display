@@ -36,21 +36,21 @@ export function HeroCardStack() {
 
   return (
     <div
-      className="relative mx-auto flex h-[460px] w-full max-w-[640px] items-center justify-center"
+      className="relative mx-auto flex h-[520px] w-full max-w-[640px] items-end justify-center pb-4"
       style={{ perspective: "1500px" }}
     >
       {/* 3D podium */}
       <img
         src={podiumAsset.url}
         alt="3D podium"
-        className="pointer-events-none absolute bottom-[10px] left-1/2 z-0 h-[170px] w-[480px] max-w-[120%] -translate-x-1/2 object-cover object-top opacity-95"
+        className="pointer-events-none absolute bottom-0 left-1/2 z-0 h-[150px] w-[460px] max-w-[120%] -translate-x-1/2 object-cover object-top opacity-95"
         width={1024}
         height={1024}
         loading="lazy"
       />
 
       <div
-        className="relative -translate-y-8 -translate-x-8 h-[240px] w-[340px] max-w-full"
+        className="relative -translate-y-24 -translate-x-8 h-[240px] w-[340px] max-w-full"
         style={{ transformStyle: "preserve-3d" }}
       >
         {cards.map((card, i) => {
