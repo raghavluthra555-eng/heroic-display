@@ -6,7 +6,7 @@ import sunglasses from "@/assets/card-sunglasses.jpg";
 import bag from "@/assets/card-bag.jpg";
 import mountain from "@/assets/card-mountain.jpg";
 import perfume from "@/assets/card-perfume.jpg";
-import podiumAsset from "@/assets/podium-dark.png.asset.json";
+import podiumAsset from "@/assets/podium-cropped.png.asset.json";
 
 type Card = {
   id: number;
@@ -43,9 +43,9 @@ export function HeroCardStack() {
       <img
         src={podiumAsset.url}
         alt="3D podium"
-        className="pointer-events-none absolute bottom-[-40px] left-1/2 z-0 h-[300px] w-[520px] max-w-[130%] -translate-x-1/2 object-contain object-bottom opacity-95"
-        width={1024}
-        height={1024}
+        className="pointer-events-none absolute bottom-0 left-1/2 z-0 h-auto w-[420px] max-w-[110%] -translate-x-1/2 opacity-95"
+        width={799}
+        height={470}
         loading="lazy"
       />
 
