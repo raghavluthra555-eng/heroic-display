@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, ChevronDown, Play, Sparkles, Activity } from "lucide-react";
 
 import { HeroCardStack } from "@/components/hero-card-stack";
+import { ScrollVideoParallax } from "@/components/scroll-video-parallax";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -10,6 +11,7 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
+    <>
     <div
       className="relative"
       style={{ background: "var(--gradient-hero)" }}
@@ -91,6 +93,30 @@ function Index() {
           <HeroCardStack />
         </motion.div>
       </section>
+
+      {/* Designer transition into cinematic section */}
+      <div className="relative z-10 -mt-px">
+        <svg
+          viewBox="0 0 1440 140"
+          preserveAspectRatio="none"
+          className="block h-[80px] w-full sm:h-[120px]"
+          aria-hidden="true"
+        >
+          <defs>
+            <linearGradient id="fadeToBlack" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0%" stopColor="oklch(0.9 0.06 295)" stopOpacity="0" />
+              <stop offset="100%" stopColor="#000" stopOpacity="1" />
+            </linearGradient>
+          </defs>
+          <path
+            d="M0,0 C240,120 480,120 720,60 C960,0 1200,0 1440,80 L1440,140 L0,140 Z"
+            fill="url(#fadeToBlack)"
+          />
+        </svg>
+      </div>
     </div>
+
+    <ScrollVideoParallax />
+    </>
   );
 }
