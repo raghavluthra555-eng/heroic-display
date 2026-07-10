@@ -58,7 +58,7 @@ export function HeroCardStack() {
           const scale = 1 - i * 0.05;
           const zIndex = cards.length - i;
           const blur = i === 0 ? 0 : i * 0.4;
-          const thickness = 14;
+          const thickness = 20;
 
           return (
             <motion.div
