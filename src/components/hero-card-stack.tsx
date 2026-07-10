@@ -106,35 +106,13 @@ export function HeroCardStack() {
                     backfaceVisibility: "hidden",
                   }}
                 />
-                {/* Right edge thickness */}
-                <div
-                  className="absolute right-0 top-0 rounded-r-sm bg-gradient-to-l from-black/80 to-black/40"
-                  style={{
-                    width: `${thickness}px`,
-                    height: "100%",
-                    transform: "translateX(100%) rotateY(90deg)",
-                    transformOrigin: "left center",
-                    backfaceVisibility: "hidden",
-                  }}
-                />
-                {/* Top edge thickness */}
-                <div
-                  className="absolute top-0 left-0 rounded-t-sm bg-gradient-to-b from-black/80 to-black/40"
-                  style={{
-                    width: "100%",
-                    height: `${thickness}px`,
-                    transform: "translateY(-100%) rotateX(90deg)",
-                    transformOrigin: "bottom center",
-                    backfaceVisibility: "hidden",
-                  }}
-                />
                 {/* Bottom edge thickness */}
                 <div
                   className="absolute bottom-0 left-0 rounded-b-sm bg-gradient-to-t from-black/80 to-black/40"
                   style={{
                     width: "100%",
                     height: `${thickness}px`,
-                    transform: "translateY(100%) rotateX(-90deg)",
+                    transform: "translateY(100%) rotateX(90deg)",
                     transformOrigin: "top center",
                     backfaceVisibility: "hidden",
                   }}
