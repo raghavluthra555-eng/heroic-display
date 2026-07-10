@@ -54,8 +54,8 @@ export function HeroCardStack() {
         style={{ transformStyle: "preserve-3d" }}
       >
         {cards.map((card, i) => {
-          const offsetX = i * 26;
-          const offsetY = i * -6;
+          const offsetX = i * 20;
+          const offsetY = i * -5;
           const scale = 1 - i * 0.03;
           const zIndex = cards.length - i;
           const blur = i === 0 ? 0 : i * 0.4;
